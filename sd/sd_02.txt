@@ -1,0 +1,1 @@
+Read the first 256M of the sd card and see if any errors occur.
