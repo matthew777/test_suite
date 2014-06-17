@@ -7,7 +7,7 @@ trap "rm -f ${TEMP} ; exit 1" 1 2 3 15
 trap "rm -f ${TEMP}" 0
 
 check_blocks() {
-    dd if=/dev/mmcblk0 of=/dev/null bs=256K count=1K > ${TEMP} 2>&1
+    dd if=/dev/mmcblk1 of=/dev/null bs=256K count=1K > ${TEMP} 2>&1
     IN=`fgrep -i 'records in' ${TEMP} | cut -f1 '-d '`
     if [ -z "${IN}" ] ; then
 	return 1
