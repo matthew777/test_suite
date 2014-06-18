@@ -112,6 +112,7 @@ echo "Start to read and write USB2.0 storage"
 usb_write_read_test
 umount_usb
 submit_pass_result
+echo "Check test log file at $PWD"
 
 # Clean exit so lava-test can trust the results
 exit 0
