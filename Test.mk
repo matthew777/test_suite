@@ -56,4 +56,4 @@ unrun:
 rerun: unrun run
 
 clean:
-	rm -f $(LOG)
+	rm -f *.log

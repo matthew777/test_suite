@@ -1,0 +1,1 @@
+Validate USB functionalities, like write data by 'cp' command and read data by 'cmp' command.

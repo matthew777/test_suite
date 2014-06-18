@@ -1,0 +1,1 @@
+Verify the system sees at least two partitions for eMMC device #0
