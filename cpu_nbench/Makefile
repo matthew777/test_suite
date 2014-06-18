@@ -17,42 +17,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #
-# Contributors:
-#     Torez Smith <torez.smith@linaro.org> (IBM Corporation)
-#       - initial API and implementation
-#     David A. Long <dave.long@linaro.org>
-#       - copied and modified for TI/OMAP-specific tests and utilities
-#     Matthew Hong <matthew.hong@tw.fujitsu.com>
-#       - copied for TI/OMAP-specific tests
-#       - Added for Fujitsu tests
-#
 
-SUBDIRS = sd smc kernelbuild sdcard emmc usb usb_host_perf usb_dev_perf \
-          cpu_nbench
-
-.PHONY: $(SUBDIRS)
-
-.PHONY: all clean 
-
-.PHONY: run unrun rerun
-
-$(SUBDIRS):
-	$(MAKE) -C $@ run
-
-run:
-	for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir run; \
-	done
-
-unrun:
-	for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir unrun; \
-	done
-
-rerun: unrun run
+all:
 
 clean:
-	for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir clean; \
-	done
+
+include ../Test.mk
 
