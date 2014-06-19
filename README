@@ -1,0 +1,18 @@
+Fujitsu Test Suite
+==================
+
+- For running a single test item:
+  The available test items according to the target of "SUBDIRS" definition in Makefile
+  ex: SUBDIRS = kernelbuild sdcard emmc usb
+	
+  Usage:
+	make kernelbuild
+	make emmc
+
+
+- For auto running all of test items:
+  The all of test items would be executed according to the target of "AUTORUNDIRS" definition in Makefile
+  ex: AUTORUNDIRS = kernelbuild sdcard emmc usb
+
+  Usage:
+	make run

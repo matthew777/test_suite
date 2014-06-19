@@ -24,13 +24,18 @@
 #       - copied and modified for TI/OMAP-specific tests and utilities
 #     Matthew Hong <matthew.hong@tw.fujitsu.com>
 #       - copied for TI/OMAP-specific tests
-#       - Added for Fujitsu tests
+#       - modified and added for Fujitsu tests
 #
 
 SUBDIRS = sd smc kernelbuild sdcard emmc usb usb_host_perf usb_dev_perf \
           cpu_nbench
 
+AUTORUNDIRS = sd smc kernelbuild sdcard emmc usb usb_host_perf \
+          cpu_nbench
+
 .PHONY: $(SUBDIRS)
+
+.PHONY: $(AUTORUNDIRS)
 
 .PHONY: all clean 
 
@@ -40,12 +45,12 @@ $(SUBDIRS):
 	$(MAKE) -C $@ run
 
 run:
-	for dir in $(SUBDIRS); do \
+	for dir in $(AUTORUNDIRS); do \
 		$(MAKE) -C $$dir run; \
 	done
 
 unrun:
-	for dir in $(SUBDIRS); do \
+	for dir in $(AUTORUNDIRS); do \
 		$(MAKE) -C $$dir unrun; \
 	done
 
