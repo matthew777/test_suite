@@ -14,7 +14,7 @@ check_test_env(){
 
 reboot_test(){
     i=$(cat /root/num.log)
-    while [ $i -le 3 ]
+    while [ $i -le 10 ]
     do
         echo "***System Reboot Stablity Test***"
         echo "System will reboot in 10 seconds..."
