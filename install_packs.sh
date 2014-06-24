@@ -8,5 +8,15 @@ apt-get -y --force-yes install wget \
                                uboot-mkimage \
                                linux-libc-dev \
                                libtool
+# for general usage
+apt-get -y --force-yes install dosfstools \
+                               usbutils \
+                               pciutils
 
-apt-get -y --force-yes install dosfstools
+# for multimedia test
+apt-get -y --force-yes install alsa-utils \
+                               libgstreamer0.10-0 \
+                               gstreamer0.10-plugins-base \
+                               gstreamer0.10-plugins-bad \
+                               gstreamer0.10-plugins-good \
+                               gstreamer-tools                               
