@@ -32,7 +32,8 @@ download_src() {
 }
 
 build_kernel() {
-    ( cd kernel-* && make distclean && make omap2plus_defconfig && make -j2 uImage ) > buildlog 2>&1
+    ( find ${KERNEL_SRC}/* | xargs touch )
+    ( cd kernel-* && make distclean && make omap2plus_defconfig && make -j2 uImage ) >> buildlog 2>&1
     tail -9 buildlog | grep -q 'arch/arm/boot/uImage is ready'
     BUILD_STATUS=${?}
 
@@ -48,6 +49,7 @@ COUNT=1
 while [ $COUNT -le 5 ]
 do
     echo "Start to build kernel source test$COUNT"
+    echo "Start to build kernel source test$COUNT" >> buildlog 2>&1
     check "Verify that the kernel succesfully builds" build_kernel
     COUNT=$(($COUNT+1))
 done
