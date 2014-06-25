@@ -1,0 +1,1 @@
+Verify the system is able to read and write for HSSPI(mtdblock1) device

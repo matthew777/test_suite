@@ -1,0 +1,1 @@
+Unable to find block special device file for HSSPI(mtdblock1) device and No /root and /tmp folder in root filesystem
