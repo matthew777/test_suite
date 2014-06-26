@@ -1,0 +1,10 @@
+#!/bin/bash
+
+function fail_test() {
+    local reason=$1
+    echo "${TEST}: FAIL - ${reason}" >> log.txt
+}
+
+function pass_test() {
+    echo "${TEST}: PASS" >> log.txt
+}
