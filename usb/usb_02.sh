@@ -72,7 +72,7 @@ echo "Start to create test files"
 create_files ${SRC_DIR}
 
 COUNT=1
-while [ $COUNT -le 3 ]
+while [ $COUNT -le 20 ]
 do
     echo "Start to copy and verify files test$COUNT"
     copy_files_test
