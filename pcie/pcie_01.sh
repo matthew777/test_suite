@@ -3,7 +3,7 @@
 . ../include/functions.sh
 
 check_lspci() {
-    lspci -v >> pcie.log 2>&1
+    lspci -v >> lspci.log 2>&1
     if [ $? -ne 0 ] ; then
 	return 1
     fi
