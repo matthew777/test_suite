@@ -7,6 +7,7 @@ GATEWAY=192.168.1.200
 DOWNLOAD_FILE=http://192.168.1.75/images/kernel-3.4.tar.gz
 
 check_netstat() {
+    echo "netstat -an" >> ethernet.log 2>&1
     netstat -an >> ethernet.log 2>&1
     if [ $? -ne 0 ] ; then
 	return 1
@@ -16,6 +17,7 @@ check_netstat() {
 }
 
 check_ifconfig() {
+    echo "ifconfig -a" >> ethernet.log 2>&1
     ifconfig -a >> ethernet.log 2>&1
     if [ $? -ne 0 ] ; then
 	return 1
@@ -25,6 +27,7 @@ check_ifconfig() {
 }
 
 check_route() {
+    echo "route" >> ethernet.log 2>&1
     route >> ethernet.log 2>&1
     if [ $? -ne 0 ] ; then
 	return 1
@@ -62,6 +65,7 @@ check_ifconfig_down() {
 }
 
 check_dhclient() {
+    echo "dhclient -v $INTERFACE" >> ethernet.log 2>&1
     dhclient -v $INTERFACE >> ethernet.log 2>&1
     if [ $? -ne 0 ] ; then
 	return 1
@@ -71,6 +75,7 @@ check_dhclient() {
 }
 
 check_ping() {
+    echo "ping -c 5 $GATEWAY" >> ethernet.log 2>&1
     ping -c 5 $GATEWAY >> ethernet.log 2>&1
     if [ $? -ne 0 ] ; then
 	return 1
@@ -80,6 +85,7 @@ check_ping() {
 }
 
 check_apt_get() {
+    echo "apt-get update" >> ethernet.log 2>&1
     apt-get update >> ethernet.log 2>&1
     if [ $? -ne 0 ] ; then
 	return 1
@@ -89,6 +95,7 @@ check_apt_get() {
 }
 
 check_apt_get_wget() {
+    echo "apt-get install -q -y wget" >> ethernet.log 2>&1
     apt-get install -q -y wget >> ethernet.log 2>&1
     if [ $? -ne 0 ] ; then
 	return 1
