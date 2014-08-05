@@ -28,7 +28,7 @@
 #
 
 SUBDIRS = sd smc kernelbuild sdcard emmc usb usb_host_perf usb_dev_perf \
-          cpu_nbench reboot hsspi ethernet
+          cpu_nbench reboot hsspi ethernet pcie
 
 AUTORUNDIRS = sd smc kernelbuild sdcard emmc usb usb_host_perf \
           cpu_nbench ethernet

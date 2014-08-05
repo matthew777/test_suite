@@ -2,8 +2,8 @@
 
 . ../include/functions.sh
 
-check_mtd1_device() {
-    cat /proc/mtd | grep -q mtd1
+check_mtd2_device() {
+    cat /proc/mtd | grep -q mtd2
     if [ ${?} -ne 0 ] ; then
         return 1
     else
@@ -21,7 +21,7 @@ create_testfile() {
 }
 
 write_hsspi() {
-    dd if=/root/testfile of=/dev/mtdblock1
+    dd if=/root/testfile of=/dev/mtdblock2
     if [ ${?} -ne 0 ] ; then
         return 1
     else
@@ -30,7 +30,7 @@ write_hsspi() {
 }
 
 read_hsspi() {
-    dd if=/dev/mtdblock1 of=/tmp/dump bs=512 count=4096
+    dd if=/dev/mtdblock2 of=/tmp/dump bs=512 count=4096
     if [ ${?} -ne 0 ] ; then
         return 1
     else
@@ -47,7 +47,7 @@ cmp_file() {
     fi
 }
 
-check "Verify that mtd1 device exists" check_mtd1_device
+check "Verify that mtd2 device exists" check_mtd2_device
 check "Verify that testfile successfully creates" create_testfile
 check "Verify that testfile successfully writes to HSSPI" write_hsspi
 check "Verify that file successfully reads from HSSPI" read_hsspi

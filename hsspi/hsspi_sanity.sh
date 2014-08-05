@@ -2,23 +2,22 @@
 
 . ../include/functions.sh
 
-if [ -b /dev/mtdblock1 ]
+if [ ! -b /dev/mtdblock2 ]
   then
-    exit 0
-  else
+    echo "Unable to find /dev/mtdblock2"
     exit 1
 fi
 
-if [ -d /root ]
+if [ ! -d /root ]
   then
-    exit 0
-  else
+    echo "No /root directory"
     exit 1
 fi
 
-if [ -d /tmp ]
+if [ ! -d /tmp ]
   then
-    exit 0
-  else
+    echo "No /tmp directory"
     exit 1
 fi
+
+exit 0
