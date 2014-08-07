@@ -6,12 +6,19 @@ apt-get update
 apt-get -y --force-yes install wget \
                                build-essential \
                                uboot-mkimage \
+                               u-boot-tools \
                                linux-libc-dev \
-                               libtool
+                               libtool \
+                               gcc \
+                               make
+
 # for general usage
 apt-get -y --force-yes install dosfstools \
                                usbutils \
-                               pciutils
+                               pciutils \
+                               make \
+                               wget \
+                               openssh-server
 
 # for multimedia test
 apt-get -y --force-yes install alsa-utils \

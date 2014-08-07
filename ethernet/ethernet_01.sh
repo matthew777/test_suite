@@ -3,8 +3,8 @@
 . ../include/functions.sh
 
 INTERFACE=eth0
-GATEWAY=192.168.1.200
-DOWNLOAD_FILE=http://192.168.1.75/images/kernel-3.4.tar.gz
+GATEWAY=192.168.16.200
+DOWNLOAD_FILE=http://192.168.16.75/images/kernel-3.4.tar.gz
 
 check_netstat() {
     echo "netstat -an" >> ethernet.log 2>&1
