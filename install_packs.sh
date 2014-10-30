@@ -5,7 +5,6 @@ apt-get update
 # for kernelbuild test
 apt-get -y --force-yes install wget \
                                build-essential \
-                               uboot-mkimage \
                                u-boot-tools \
                                linux-libc-dev \
                                libtool \
@@ -28,4 +27,4 @@ apt-get -y --force-yes install alsa-utils \
                                gstreamer0.10-plugins-good \
                                gstreamer-tools \
                                gstreamer0.10-alsa \
-                               gstreamer0.10-ffmpe
+                               gstreamer0.10-ffmpeg
