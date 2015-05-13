@@ -25,6 +25,6 @@ apt-get -y --force-yes install alsa-utils \
                                gstreamer0.10-plugins-base \
                                gstreamer0.10-plugins-bad \
                                gstreamer0.10-plugins-good \
+                               gstreamer0.10-plugins-ugly \
                                gstreamer-tools \
                                gstreamer0.10-alsa \
-                               gstreamer0.10-ffmpeg
